@@ -60,3 +60,7 @@ export default function App() {
   element={<Checkout />}
 />
 }
+<Route
+  path="/order-success"
+  element={<OrderSuccess />}
+/>
