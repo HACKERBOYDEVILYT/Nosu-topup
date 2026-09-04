@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
+import Checkout from "./pages/Checkout";
 
 function Placeholder({ title }) {
   return (
@@ -53,4 +54,8 @@ export default function App() {
       />
     </Routes>
   );
+  <Route
+  path="/checkout"
+  element={<Checkout />}
+/>
 }
