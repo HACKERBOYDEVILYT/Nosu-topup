@@ -1,37 +1,43 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function GameCard({
   name,
   category,
   image,
   accent = "orange",
+  slug,
 }) {
   return (
-    <motion.a
-      href="#"
+    <motion.div
       className={`game-card ${accent}`}
       whileHover={{ y: -7 }}
       transition={{ duration: 0.2 }}
     >
-      <div className="game-image">
-        <img src={image} alt={name} />
+      <Link
+        to={`/topup/${slug}`}
+        className="game-card-link"
+      >
+        <div className="game-image">
+          <img src={image} alt={name} />
 
-        <div className="game-overlay" />
+          <div className="game-overlay" />
 
-        <span className="game-category">
-          {category}
-        </span>
+          <span className="game-category">
+            {category}
+          </span>
 
-        <div className="game-arrow">
-          <ArrowUpRight size={18} />
+          <div className="game-arrow">
+            <ArrowUpRight size={18} />
+          </div>
         </div>
-      </div>
 
-      <div className="game-info">
-        <h3>{name}</h3>
-        <span>Instant Top-Up</span>
-      </div>
-    </motion.a>
+        <div className="game-info">
+          <h3>{name}</h3>
+          <span>Instant Top-Up</span>
+        </div>
+      </Link>
+    </motion.div>
   );
 }
